@@ -14,9 +14,9 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $berita = $this->Crud_model->listing('tbl_berita');
+        $sambutan = $this->Crud_model->listingOne('tbl_general', 'type', 'sambutan');
         $data = [
-            'berita'    => $berita,
+            'sambutan'    => $sambutan,
             'content'  => 'home/home/index'
         ];
         $this->load->view('home/layout/wrapper', $data, FALSE);

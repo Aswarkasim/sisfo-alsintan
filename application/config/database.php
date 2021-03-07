@@ -25,3 +25,9 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+
+/*
+u8939991_alsintan
+ol7yTHoIW9G^
+*/
