@@ -1,0 +1,3 @@
+<p>
+  <?= $kontak->deskripsi; ?>
+</p>
