@@ -66,7 +66,7 @@
                                 <label for="" class="pull-right">Traktor Tersedia</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" placeholder="Traktor Tersedia" class="form-control" value="<?= $traktor->tersedia; ?>" name="tersedia">
+                                <input type="text" placeholder="Traktor Tersedia" class="form-control" value="<?= $traktor->tersedia_traktor; ?>" name="tersedia">
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                                 <label for="" class="pull-right">Asumsi Penggunaan Traktor (dalam %)</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="asumsi_penggunaan" class="form-control" value="<?= $traktor->asumsi_penggunaan; ?>" placeholder="Dalam persen(%)">
+                                <input type="text" name="asumsi_penggunaan" class="form-control" value="<?= $traktor->asumsi_penggunaan_traktor; ?>" placeholder="Dalam persen(%)">
                                 <small>*Gunakan titik(.) sebagai koma</small>
                             </div>
                         </div>

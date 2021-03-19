@@ -76,7 +76,7 @@
                                 <label for="" class="pull-right">Thresher Tersedia</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" placeholder="Thresher Tersedia" class="form-control" value="<?= $thresher->tersedia; ?>" name="tersedia">
+                                <input type="text" placeholder="Thresher Tersedia" class="form-control" value="<?= $thresher->tersedia_thresher; ?>" name="tersedia">
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                                 <label for="" class="pull-right">Asumsi Penggunaan Thresher (dalam %)</label>
                             </div>
                             <div class="col-md-4">
-                                <input type="text" name="asumsi_penggunaan" class="form-control" value="<?= $thresher->asumsi_penggunaan; ?>" placeholder="Dalam persen(%)">
+                                <input type="text" name="asumsi_penggunaan" class="form-control" value="<?= $thresher->asumsi_penggunaan_thresher; ?>" placeholder="Dalam persen(%)">
                                 <small>*Gunakan titik(.) sebagai koma</small>
                             </div>
                         </div>

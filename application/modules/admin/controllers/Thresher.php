@@ -171,12 +171,12 @@ class Thresher extends CI_Controller
         'id_kecamatan'        => $i->post('id_kecamatan'),
         'tahun'               => $i->post('tahun'),
         'type'          => 'thresher',
-        'tersedia'    => $tersedia,
+        'tersedia_thresher'    => $tersedia,
         'luas_sawah'          => $ls,
-        'asumsi_penggunaan'   => $a,
-        'kebutuhan'   => $kebutuhan,
-        'selisih'             => $selisih,
-        'status'              => $status,
+        'asumsi_penggunaan_thresher'   => $a,
+        'kebutuhan_thresher'   => $kebutuhan,
+        'selisih_thresher'             => $selisih,
+        'status_thresher'              => $status,
       ];
       $this->Crud_model->edit('tbl_data', 'id_data', $id_data, $data);
       $this->session->set_flashdata('msg', 'ditambah');

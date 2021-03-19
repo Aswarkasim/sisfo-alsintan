@@ -162,13 +162,12 @@ class Traktor extends CI_Controller
         'id_data'          => $id_data,
         'id_kecamatan'        => $i->post('id_kecamatan'),
         'tahun'               => $i->post('tahun'),
-        'type'          => 'thresher',
-        'traktor_tersedia'    => $tersedia,
+        'tersedia_traktor'    => $tersedia,
         'luas_sawah'          => $ls,
-        'asumsi_penggunaan'   => $a,
+        'asumsi_penggunaan_traktor'   => $a,
         'kebutuhan_traktor'   => $kebutuhan,
-        'selisih'             => $selisih,
-        'status'              => $status,
+        'selisih_traktor'             => $selisih,
+        'status_traktor'              => $status,
       ];
       $this->Crud_model->edit('tbl_data', 'id_data', $id_data, $data);
       $this->session->set_flashdata('msg', 'ditambah');
