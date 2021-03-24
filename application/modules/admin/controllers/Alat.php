@@ -30,6 +30,8 @@ class Alat extends CI_Controller
     $valid = $this->form_validation;
     $valid->set_rules('deskripsi', 'Deskripsi', 'required', array('required' => '%s tidak boleh kosong'));
 
+
+
     $i = $this->input;
     if ($valid->run()) {
       if (!empty($_FILES['gambar']['name'])) {

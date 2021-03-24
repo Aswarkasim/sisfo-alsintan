@@ -12,7 +12,7 @@
                 <?php
                 echo validation_errors('<div class="alert alert-warning"><i class="fa fa-warning"></i> ', '</div>');
 
-                echo form_open_multipart('admin/alat/edit/332')
+                echo form_open_multipart('admin/alat/edit/' . $this->uri->segment('4'))
                 ?>
 
                 <form action="" method="post">
