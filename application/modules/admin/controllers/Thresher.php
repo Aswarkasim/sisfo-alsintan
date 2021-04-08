@@ -70,7 +70,7 @@ class Thresher extends CI_Controller
         $data = [
           'id_data'                      => $id_data,
           'id_kecamatan'                 => $id_kecamatan,
-          'tahun'                        => $id_kecamatan,
+          'tahun'                        => $tahun,
           'tersedia_thresher'            => $tersedia,
           'luas_panen'                   => $lp,
           'asumsi_penggunaan_thresher'   => $a,

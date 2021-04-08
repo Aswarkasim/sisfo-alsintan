@@ -14,7 +14,6 @@
 
    .text-judul {
      padding-top: 100px;
-     padding-bottom: 10050px;
    }
  </style>
 
