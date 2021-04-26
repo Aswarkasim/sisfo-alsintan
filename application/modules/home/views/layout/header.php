@@ -42,6 +42,15 @@
          <li class="nav-item <?= $uri == 'gis' ? "active" : "" ?>">
            <a class=" nav-link" href="<?= base_url('home/gis'); ?>">Web GIS</a>
          </li>
+
+         <li class="nav-item <?= $uri == 'thresher' ? "active" : "" ?>">
+           <a class=" nav-link" href="<?= base_url('home/thresher'); ?>">Thresher</a>
+         </li>
+
+         <li class="nav-item <?= $uri == 'traktor' ? "active" : "" ?>">
+           <a class=" nav-link" href="<?= base_url('home/traktor'); ?>">Traktor</a>
+         </li>
+
          <li class="nav-item <?= $uri == 'bantuan' ? "active" : "" ?>">
            <a class=" nav-link" href="<?= base_url('home/bantuan'); ?>">Bantuan</a>
          </li>

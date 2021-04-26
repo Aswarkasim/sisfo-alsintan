@@ -16,6 +16,10 @@
   <!-- Bootstrap core CSS -->
   <link href="<?= base_url('assets/home/'); ?>bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/font-awesome/css/font-awesome.min.css">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -32,8 +36,6 @@
       }
     }
   </style>
-  <!-- Custom styles for this template -->
-  <!-- <link href="<?= base_url('assets/home/'); ?>carousel.css" rel="stylesheet"> -->
 </head>
 
 <body>

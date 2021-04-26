@@ -5,6 +5,10 @@
 			"type": "Feature",
 			"properties": {
 				"stroke": "#555555",
+				"stroke-width": 2,
+				"stroke-opacity": 1,
+				"fill": "#e354cb",
+				"fill-opacity": 0.5,
 				"KECAMATAN": "PATALLASSANG"
 			},
 			"geometry": {

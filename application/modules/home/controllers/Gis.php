@@ -18,6 +18,8 @@ class Gis extends CI_Controller
     {
 
         $tahun = $this->input->post('tahun');
+        $alsintan = "traktor";
+        $alsintan = $this->input->post('alsintan');
         $current = date('Y-m-d');
         $yearNow = date("Y", strtotime($current));
 
@@ -35,6 +37,7 @@ class Gis extends CI_Controller
         $data = [
             'kecamatan' => $kecamatan,
             'tahun'      => $tahun,
+            'alsintan'      => $alsintan,
             'content'  => 'home/gis/index_b'
         ];
         $this->load->view('home/layout/wrapper', $data, FALSE);

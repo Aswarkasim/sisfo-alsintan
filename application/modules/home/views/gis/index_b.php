@@ -18,6 +18,13 @@
   <form action="<?= base_url('home/gis'); ?>" method="POST">
     <div class="row">
       <div class="col-md-3">
+        <select name="alsintan" class="form-control" id="">
+          <option value="">--Alsintan--</option>
+          <option <?= $alsintan == 'traktor' ? 'selected' : ''; ?> value="traktor">Traktor</option>
+          <option <?= $alsintan == 'thresher' ? 'selected' : ''; ?> value="thresher">Thresher</option>
+        </select>
+      </div>
+      <div class="col-md-3">
         <select name="tahun" class="form-control" id="">
           <?php for ($i = 2017; $i <= 2024; $i++) { ?>
             <option value="<?= $i; ?>" <?= ($i == $tahun) ? 'selected' : ''; ?>><?= $i; ?></option>
@@ -29,8 +36,15 @@
       </div>
     </div>
   </form>
+  <div class="row">
+    <div class="col-md-11">
+      <div class="mt-1" id="mapid"></div>
+    </div>
+    <div class="col-md-1">
 
-  <div class="mt-1" id="mapid"></div>
+    </div>
+  </div>
+
 </body>
 <!-- Make sure you put this AFTER Leaflet's CSS -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -57,9 +71,49 @@
     "weight": 5,
     "opacity": 0.65
   };
+  /*
 
+  Hijau : #1aa51e
+  MMerah : #e50d01
+  Kuning : #efc700
+  */
 
   <?php foreach ($kecamatan as $row) {
+    $warna = "#ff7800";
+
+    $opacity = 1;
+
+    if ($alsintan == 'thresher') {
+      $status = $row->status_thresher;
+      $selisih = $row->selisih_thresher;
+    } else {
+      $status = $row->status_traktor;
+      $selisih = $row->selisih_traktor;
+    }
+
+    switch ($status) {
+      case 'Kurang':
+        $warna = "#e50d01";
+        if ($selisih <= -1 && $selisih >= -10) {
+          $opacity = 0.3;
+        } else if ($selisih <= -11 && $selisih >= -20) {
+          $opacity = 0.6;
+        } else if ($selisih <= -21) {
+          $opacity = 1;
+        }
+        break;
+      case 'Cukup':
+        $warna = "#0438c8";
+        break;
+      case 'Lebih':
+        $warna = "#1aa51e";
+        break;
+      default:
+        $warna = "#ff7800";
+        break;
+    }
+
+
   ?>
     var jsonTest = new L.GeoJSON.AJAX(["<?= base_url($row->geojson); ?>"], {
       // onEachFeature: popUp,
@@ -67,11 +121,22 @@
         var out = [];
         out.push("Kecamatan : " + "<?= $row->nama_kecamatan; ?>")
         out.push("Luas Sawah : " + "<?= $row->luas_sawah . ' Ha'; ?>")
+        out.push("")
+        out.push("Traktor Tersedia: " + "<?= $row->tersedia_traktor . ' Unit'; ?>")
         out.push("Kebutuhan Traktor : " + "<?= $row->kebutuhan_traktor . ' Unit'; ?>")
+        out.push("Selisih Traktor : " + "<?= $row->selisih_traktor . ' Unit'; ?>")
+        out.push("")
+        out.push("Traktor Tersedia: " + "<?= $row->tersedia_thresher . ' Unit'; ?>")
         out.push("Kebutuhan Thresher : " + "<?= $row->kebutuhan_thresher . ' Unit'; ?>")
+        out.push("Selisih Thresher : " + "<?= $row->selisih_thresher . ' Unit'; ?>")
         l.bindPopup(out.join("<br />"));
       },
-      style: myStyle,
+      style: {
+        "strokeColor": "#000",
+        "fillColor": "<?= $warna; ?>",
+        "weight": 5,
+        "fillOpacity": <?= $opacity; ?>
+      },
 
     }).addTo(mymap);
   <?php } ?>

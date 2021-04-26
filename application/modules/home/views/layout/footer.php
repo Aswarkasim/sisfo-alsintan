@@ -17,6 +17,17 @@
 <script>
   window.jQuery || document.write('<script src="<?= base_url('assets/home/'); ?>jquery.slim.min.js"><\/script>')
 </script>
+<script src="<?= base_url('assets/admin/') ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/home/'); ?>bootstrap.bundle.js"></script>
+<script src="<?= base_url('assets/admin/') ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets/admin/') ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+  $(function() {
+    $('.DataTable').DataTable();
+    $('.select2').select2()
+  })
+</script>
+
 
 </html>
