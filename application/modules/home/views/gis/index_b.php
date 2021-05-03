@@ -95,18 +95,18 @@
       case 'Kurang':
         $warna = "#e50d01";
         if ($selisih <= -1 && $selisih >= -10) {
-          $opacity = 0.3;
+          $warna = "#f2ff00";
         } else if ($selisih <= -11 && $selisih >= -20) {
-          $opacity = 0.6;
+          $warna = "#e68700";
         } else if ($selisih <= -21) {
-          $opacity = 1;
+          $warna = "#e60000"
         }
         break;
       case 'Cukup':
-        $warna = "#0438c8";
+        $warna = "#01b40c";
         break;
       case 'Lebih':
-        $warna = "#1aa51e";
+        $warna = "#1400d5";
         break;
       default:
         $warna = "#ff7800";
