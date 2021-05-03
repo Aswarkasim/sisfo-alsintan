@@ -99,7 +99,7 @@
         } else if ($selisih <= -11 && $selisih >= -20) {
           $warna = "#e68700";
         } else if ($selisih <= -21) {
-          $warna = "#e60000"
+          $warna = "#e60000";
         }
         break;
       case 'Cukup':
